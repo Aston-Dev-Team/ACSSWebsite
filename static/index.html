@@ -1,5 +1,5 @@
 <DOCTYPE html>
-	<html>
+	<html lang="en">
 	<head>
 		<!-- Content Security Policy -->
 
@@ -69,13 +69,22 @@
 			<div class="parallax">
 
 
+		<!-- poster="//cdn.webaddressgoeshere.com/MicroMouse/BGVidImage.JPG" -->
+          	<video class="fullscreen-bg__video" loop muted autoplay class="fullscreen-bg__video">
+        	  	<source src="/assets/media/BGVid.webm" type="video/webm">
+          		<source src="/assets/media/BGVid.mp4" type="video/mp4">
+        		<source src="/assets/media/BGVid.ogg" type="video/ogg">
+    	    </video>
+	    
+
+
 				<div id="imageSpacer"></div>
 
 				<div id="angularTransitionBorder"></div>
 
 			</div>
 
-			<div class="container-fluid"><!-- Container element -->
+			<div class="container-fluid videoHideOverlay"><!-- Container element -->
 
 
 				<div id="latestInfoPane">
@@ -262,8 +271,6 @@
 
 
 
-
-
 					<!-- Add some v space -->
 					<div class="form-group">
 						&nbsp;
@@ -274,7 +281,7 @@
 			</div><!-- Close Container -->
 
 			<!-- Add some v space -->
-			<div class="pageStdVSpace">
+			<div class="pageStdVSpace videoHideOverlay">
 				&nbsp;
 			</div>
 

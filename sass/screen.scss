@@ -5,8 +5,8 @@
 @import "partials/base";
 @import "compass/css3";
 
-
 body, html {
+
     height: 100%;
     font-family: 'Lato', sans-serif;
     display: flex;
@@ -44,32 +44,38 @@ body, html {
  }
 
 
-#imageSpacer{
+ #imageSpacer{
 
     width: 100%;
     display: block;
 
 }
 
- .parallax {
-
-    /* The image to be used */
-    background-image: url("/assets/media/bg.jpg");
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+.parallax {
 
     @include respond-to('mobile') {
-        height: 25%;
+
+        height: 30%;
 
         #imageSpacer{
+
             height: 50%;
 
         }
+
+        .fullscreen-bg__video{
+
+            display: none;
+        }
+
+        /* The image to be used */
+        background-image: url("/assets/media/StaticBGVidImage.JPG");
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
     }
 
@@ -107,7 +113,24 @@ body, html {
     height: 70%;
 }
 
-#angularTransitionBorder{
+.fullscreen-bg__video {
+
+    width: 100%; /* width needs to be set to 100% */
+    height: 100%; /* height needs to be set to 100% */
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+
+}
+
+    //This hides where the video is under the content
+    .videoHideOverlay {
+        background-color: white;
+    }
+
+
+    #angularTransitionBorder{
 
 
     //Google linear backgroud editor for a starting point, then edit it to fit design.
@@ -126,15 +149,15 @@ body, html {
 /*
     Positioning for the aston triangel at the top of the page, JS scripts takes
     care of the movment
- */
- #astonTriangle{
+    */
+    #astonTriangle{
 
-    width: 30%;
-    @include transform(translate(-30%, -30%));
+        width: 30%;
+        @include transform(translate(-30%, -30%));
 
-    display: inline-block;
-    text-align: center;
-    position: absolute;
+        display: inline-block;
+        text-align: center;
+        position: absolute;
 
     //Set the triangle ontop
     z-index: 3;
@@ -190,12 +213,12 @@ body, html {
 
     @include respond-to('medium') {
         height: 100%;
-      
+
     }
 
     @include respond-to('large') {
         height: 100%;
-       
+
     }
 
 }
@@ -216,10 +239,15 @@ body, html {
 
 
 #pageFloor{
+
     width: 100%;
-    height: 250px;
+    height: 30%;
     display: block;
-    background-image: url("/assets/media/bg.jpg");
+
+
+     @include respond-to('mobile') {
+
+        background-image: url("/assets/media/StaticBGVidImageLowerSegment.JPG");
 
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
@@ -227,31 +255,32 @@ body, html {
         background-repeat: no-repeat;
         background-size: cover;
 
-        @include dropShaddowBellow(0 40px 50px -12px);
-
-    }
-
-    .buttonSpacer{
-        height: 5%;
-        display: block;
-        width: 100%;
     }
 
 
-    footer{
+   
+
+    @include dropShaddowBellow(0 40px 50px -12px);
+
+}
+
+.buttonSpacer{
+    height: 5%;
+    display: block;
+    width: 100%;
+}
 
 
+footer{
 
+ width: 100%;
+ padding-top: 7%;
+ padding-bottom: 2%;
+ background-color: #0e100c;;
+ text-align: center;
+ color: white;
 
-     width: 100%;
-     margin-top: 5%;
-     padding-top: 2%;
-     padding-bottom: 2%;
-     background-color: #0e100c;;
-     text-align: center;
-     color: white;
-
-     overflow: hidden;
+ overflow: hidden;
 
 
     //nudge the image down a little, centre verticaly if desired later
